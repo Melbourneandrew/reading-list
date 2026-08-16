@@ -6,6 +6,5 @@
   "dateAdded": "2026-08-15",
   "publishedAt": "2026-02-11",
   "order": 1,
-  "description": "OpenAI's account of building an agent-first software engineering environment around legibility, feedback loops, and enforceable architecture."
+  "description": "I return to this piece constantly. It shaped how I think about building environments for agents: make the work legible, shorten feedback loops, and encode architectural constraints so the system helps produce good software by default."
 }
-
