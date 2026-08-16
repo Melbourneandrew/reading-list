@@ -42,7 +42,6 @@ export default function HomePage() {
         ))}
       </ol>
 
-      <footer className="site-footer">Writing that shaped how I build, work, and think.</footer>
     </main>
   );
 }
