@@ -1,0 +1,11 @@
+{
+  "title": "Harness engineering: leveraging Codex in an agent-first world",
+  "author": "Ryan Lopopolo",
+  "slug": "harness-engineering",
+  "sourceUrl": "https://openai.com/index/harness-engineering/",
+  "dateAdded": "2026-08-15",
+  "publishedAt": "2026-02-11",
+  "order": 1,
+  "description": "OpenAI's account of building an agent-first software engineering environment around legibility, feedback loops, and enforceable architecture."
+}
+
