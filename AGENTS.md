@@ -1,22 +1,22 @@
 # AGENTS.md — Reading List
 
-This repository powers Andrew Melbourne's static reading archive at `reading.melbourndev.com`.
+This repository powers Andrew Melbourne's reading list at `reading.melbournedev.com`.
 
 ## Content
 
 - Store one entry per directory under `content/`.
-- Require `metadata.json` and `content.md` in every entry directory.
+- Require `metadata.json` in every entry directory.
 - Keep metadata valid against `src/lib/content.ts`.
-- Use Cloudflare Images delivery URLs for archived images; never commit source image binaries.
-- Preserve source wording only when Andrew supplies the material or confirms republication rights. Always retain the canonical source URL.
+- Each entry links directly to its canonical external source; do not archive or republish the source material.
+- Use the description for Andrew's own note about how the item shaped how he builds, works, or thinks.
 
 ## Validation
 
-Run `npm run verify` before publishing. The build is a fully static export in `out/`.
+Run `npm run verify` before publishing.
 
 ## Deployment
 
-Follow the local OpenClaw `reading-list` skill for editorial ingestion, Cloudflare Images, GitHub publication, and VPS deployment. The VPS procedure is modeled on and must preserve the guarantees of the `webgridplus-deploy` skill: deploy only an exact merged `origin/main` commit and verify the public HTTPS result.
+Deploy the exact merged `origin/main` commit to the VPS as a Next.js server managed by PM2 and reverse-proxied by nginx. Verify both the localhost process and public HTTPS result.
 
 
 <!-- BEGIN:nextjs-agent-rules -->
