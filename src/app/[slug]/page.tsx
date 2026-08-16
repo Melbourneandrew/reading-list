@@ -21,7 +21,7 @@ export default async function EntryPage({ params }: PageProps) {
   if (!entry) notFound();
 
   return (
-    <main className="shell">
+    <main className="shell article-shell">
       <header className="article-header">
         <Link className="back-link" href="/">← Reading list</Link>
         <h1 className="article-title">{entry.title}</h1>
@@ -34,4 +34,3 @@ export default async function EntryPage({ params }: PageProps) {
     </main>
   );
 }
-
