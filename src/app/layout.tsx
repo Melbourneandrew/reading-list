@@ -6,7 +6,7 @@ import "@fontsource/ibm-plex-sans/600.css";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://reading.melbourndev.com"),
+  metadataBase: new URL("https://reading.melbournedev.com"),
   title: {
     default: "Reading List — Andrew Melbourne",
     template: "%s — Andrew Melbourne's Reading List",
@@ -21,4 +21,3 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
     </html>
   );
 }
-
