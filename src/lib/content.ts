@@ -16,20 +16,18 @@ const metadataSchema = z.object({
 });
 
 export type EntryMetadata = z.infer<typeof metadataSchema>;
-export type Entry = EntryMetadata & { content: string };
+export type Entry = EntryMetadata;
 
 function readEntry(directoryName: string): Entry {
   const directory = path.join(contentRoot, directoryName);
   const metadata = metadataSchema.parse(
     JSON.parse(fs.readFileSync(path.join(directory, "metadata.json"), "utf8")),
   );
-  const content = fs.readFileSync(path.join(directory, "content.md"), "utf8");
-
   if (metadata.slug !== directoryName) {
     throw new Error(`Entry directory ${directoryName} must match slug ${metadata.slug}`);
   }
 
-  return { ...metadata, content };
+  return metadata;
 }
 
 export function getEntries(): Entry[] {
@@ -38,9 +36,5 @@ export function getEntries(): Entry[] {
     .filter((entry) => entry.isDirectory())
     .map((entry) => readEntry(entry.name))
     .sort((a, b) => a.order - b.order || a.title.localeCompare(b.title));
-}
-
-export function getEntry(slug: string): Entry | undefined {
-  return getEntries().find((entry) => entry.slug === slug);
 }
 
